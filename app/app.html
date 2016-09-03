@@ -1,0 +1,20 @@
+<div class="header">
+    <h3>Steemit Username: </h3>
+    <input type="text" ng-model="model.userName" placeholder="{{model.userName}}" />
+    <h3>Number of Currencies: </h3>
+    <input type="text" ng-model="model.numOfCurrencies" placeholder="{{model.numOfCurrencies}}" />
+    <br>
+    <button ng-click="model.getSteemPerMvest(model.userName, model.numOfCurrencies)">Get Comparison Data</button>
+</div>
+
+<div ng-if="model.steem_price">
+    <h3>Current Price of Steem: ${{model.steem_price}}</h3>
+    <h3>Current Worth Of {{model.total_steem}} Steem Power: ${{model.worth.toFixed(2)}}</h3>
+
+    <div ng-repeat="crypto in model.cryptoArray" class="cryptoContainer">
+        <h4>Current Steem Power Worth In {{crypto.name}}({{crypto.rank}}):</h4>
+        <h5>Current Price Of {{crypto.symbol}} in USD: ${{crypto.price_usd}}</h5>
+        <h5>Current Price Of {{crypto.symbol}} in BTC: {{crypto.price_btc}}</h5>
+        <h5>Comparison Worth Of {{crypto.symbol}}: {{crypto.compared_worth}}</h5>
+    </div>
+</div>
