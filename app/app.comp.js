@@ -15,6 +15,8 @@
 
 
         model.getSteemPerMvest = function (username, numOfCurrencies) {
+            model.cryptoArray = [];
+
             steem.api.getDynamicGlobalProperties(function (err, result) {
 
                 // Get Total Vesting Fund Steem As A Number
@@ -33,7 +35,7 @@
             });
         }
 
-        // Function to get Account Data, Using Current Steem/MVest 
+        // Function to get Account Data, Using Current Steem/MVest
         function getAccount(steemPerMVest, username, numOfCurrencies) {
             steem.api.getAccounts([username], function (err, result) {
                 handleUserData(result, steemPerMVest, numOfCurrencies);
@@ -104,7 +106,6 @@
                 model.cryptoArray.push(cryptoObject);
             }
 
-
             // Current Steem Price In USD
             model.steem_price = model.cryptoArray[steem_index].price_usd;
 
@@ -115,6 +116,7 @@
                 model.total_amount = (model.worth / price_usd);
             }
 
+            model.cryptoArray.splice(steem_index, 1);
         }
     }
 }());

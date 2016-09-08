@@ -12,9 +12,8 @@
     <h3>Current Worth Of {{model.total_steem}} Steem Power: ${{model.worth.toFixed(2)}}</h3>
 
     <div ng-repeat="crypto in model.cryptoArray" class="cryptoContainer">
-        <h4>Current Steem Power Worth In {{crypto.name}}({{crypto.rank}}):</h4>
-        <h5>Current Price Of {{crypto.symbol}} in USD: ${{crypto.price_usd}}</h5>
-        <h5>Current Price Of {{crypto.symbol}} in BTC: {{crypto.price_btc}}</h5>
-        <h5>Comparison Worth Of {{crypto.symbol}}: {{crypto.compared_worth}}</h5>
+        <h4><u>Current Steem Power Worth In {{crypto.name}}({{crypto.rank}}):</u></h4>
+        <h4>Current Price Of {{crypto.symbol}} in USD: ${{crypto.price_usd}}</h4>
+        <h4>Your Steem Power is equal to {{crypto.compared_worth.toFixed(5)}} {{crypto.symbol}}</h4>
     </div>
 </div>

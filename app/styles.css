@@ -1,11 +1,10 @@
 html,
 body {
     text-align: center;
-    border: 2px solid #000;
 }
 
 .cryptoContainer {
-    border: 2px solid #000;
+    border: 1px solid #000;
     margin: 0;
 }
 

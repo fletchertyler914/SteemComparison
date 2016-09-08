@@ -13,8 +13,6 @@
   "author": "Tyler Fletcher <fletchertyler914@yahoo.com> (https://github.com/fletchertyler914)",
   "dependencies": {
     "angular": "^1.5.8",
-    "moment": "^2.14.1",
-    "request": "^2.74.0",
-    "steem": "^0.3.17"
+    "steem": "^0.3.21"
   }
 }
